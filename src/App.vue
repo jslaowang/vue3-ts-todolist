@@ -1,21 +1,28 @@
 <script setup lang="ts">
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
-import HelloWorld from './components/HelloWorld.vue'
+import TodoAdd from "./components/TodoAdd.vue";
+import TodoFilter from "./components/TodoFilter.vue";
 </script>
 
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
+  <div class="todo-wrap">
+    <TodoAdd msg="Hello Vue3-TS-Todolist" />
+    <TodoFilter />
+    <TodoList />
+  </div>
 </template>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  background: #c6cbef;
+  height: 100%;
+  padding: 16px;
+}
+.todo-wrap {
+  width: 500px;
+  background: #f4f4fd;
+  padding: 50px 30px;
+  border-radius: 20px;
 }
 </style>
