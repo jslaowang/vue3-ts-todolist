@@ -6,31 +6,20 @@
       :index="index"
       :name="item.name"
       :status="item.status"
-      @onDelete="onDelete"
+      @onDelete="$emit('onDelete', index)"
     />
   </div>
 </template>
 
 <script setup lang="ts">
-import { reactive } from "vue";
+
 import TodoItem from './TodoItem.vue'
 
-interface Todo {
-  name: string,
-  status: boolean,
-}
-let todoList = reactive<Todo[]>([
-  { name: 'todo-1', status: true },
-  { name: 'todo-2', status: false },
-  { name: 'todo-3', status: false },
-])
+defineProps<{ todoList: any }>();
 
-const onDelete = (index: number): void => {
-  todoList.splice(index, 1)
-}
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .list-wrap {
   margin-top: 16px;
 }
